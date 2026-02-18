@@ -137,6 +137,7 @@ Eksplorasi sistem yang baru diinstall:
 ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.1.png)
 2. Tampilkan versi kernel: uname -r
 ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.2.png)
+
 3. List partisi: lsblk
 ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.3.png)
 4. Check network connectivity: ping -c 4 google.com
