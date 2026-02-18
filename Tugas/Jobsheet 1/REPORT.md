@@ -103,10 +103,15 @@ Install Ubuntu Server 22.04 LTS di VirtualBox dengan langkah berikut:
 ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.1.png)
 
 2. Create VM baru di VirtualBox (RAM: 2GB, Disk: 25GB)
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.2.png)
 3. Install dengan automatic partitioning (guided)
-5. Buat user account dengan password yang kuat
-6. Reboot dan login ke sistem
-7. Dokumentasikan proses instalasi dengan screenshot key steps
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.3.png)
+4. Buat user account dengan password yang kuat
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.4.png)
+5. Reboot dan login ke sistem
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.5.png)
+6. Dokumentasikan proses instalasi dengan screenshot key steps
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.3.6.png)
    
 #### Latihan 1.4
 Setelah instalasi Ubuntu Server, lakukan tasks berikut:
