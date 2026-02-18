@@ -134,10 +134,15 @@ Setelah instalasi Ubuntu Server, lakukan tasks berikut:
 #### Latihan 1.5
 Eksplorasi sistem yang baru diinstall:
 1. Tampilkan informasi OS: cat /etc/os-release
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.1.png)
 2. Tampilkan versi kernel: uname -r
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.2.png)
 3. List partisi: lsblk
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.3.png)
 4. Check network connectivity: ping -c 4 google.com
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.4.png)
 5. Install dan jalankan htop untuk melihat resource usage
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](gambar/gambar%201.5.5.png)
 6. Buat laporan singkat tentang konfigurasi sistem Anda
 
 
