@@ -152,11 +152,17 @@ Eksplorasi sistem yang baru diinstall:
 Ceritakan pengalaman Anda dengan sistem operasi:
 1. Sistem operasi apa yang Anda gunakan sehari-hari? (Windows, macOS,
 Linux, atau lainnya)
+- windows dan android
 2. Berapa lama Anda menggunakan sistem operasi tersebut?
+- dari saya mengenal dunia digital
 3. Apa yang Anda sukai dari sistem operasi tersebut?
+- simpel dan mudah dimengerti
 4. Apa tantangan atau masalah yang pernah Anda hadapi?
+- agak berat saat pemrosesannya
 5. Apakah Anda pernah menggunakan sistem operasi lain? Bandingkan
 pengalaman Anda.
+- belum
 6. Setelah mempelajari bab ini, apakah ada sistem operasi lain yang ingin
 Anda coba? Mengapa?
+- linux karena saya ingin membuat sistem yang ringan
 
