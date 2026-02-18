@@ -99,7 +99,7 @@ Linux: Jarang digunakan di meja kantor biasa karena kurva pembelajaran yang ting
 #### Latihan 1.3
 Install Ubuntu Server 22.04 LTS di VirtualBox dengan langkah berikut:
 1. Download Ubuntu Server ISO dari website resmi
-   
+   ![hasil download](gambar/gambar 1.3.1.png)
 2. Create VM baru di VirtualBox (RAM: 2GB, Disk: 25GB)
 3. Install dengan automatic partitioning (guided)
 5. Buat user account dengan password yang kuat
