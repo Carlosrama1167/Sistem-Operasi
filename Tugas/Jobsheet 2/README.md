@@ -8,8 +8,10 @@
  #### Langkah-langkah
  1. lscpu
  ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.1.1.png)
+
  2. free -h
  ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.1.2.png)
+ 
  3. sudo dmidecode -t system
  ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.1.3.png)
 
@@ -23,7 +25,7 @@
 ## Praktikum 2.2 - Indentifikasi Perangkat PCI/USB dan Driver
 
  ### Latihan 2.2
-    Temukan 1 perangkat PCI (misal NIC) dan tuliskan: Vendor:Device ID (angka
+    Temukan 1 perangkat PCI (misal NIC) dan tuliskan: Vendor:Device ID (angka 
     heksadesimal), nama driver/modul kernel, dan deskripsi singkat fungsinya
 
 ## Praktikum 2.3 — Identifikasi Storage dan Filesystem
