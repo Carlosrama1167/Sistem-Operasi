@@ -142,45 +142,92 @@
    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.13.1.png)
 ## Praktikum 2.14 — Menghentikan Proses dengan kill
    1. sleep 300 &
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.14.1.png)
    2. ps aux | grep -E " sleep 300 " | grep -v grep
    3. kill < PID_ANDA >
    4. ps aux | grep -E " sleep 300 " | grep -v grep
    5. kill -9 < PID_ANDA >
 ## Praktikum 2.15 — Cek Disk, Load, dan Service
    1. df -h
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.15.1.png)
    2. sudo du -sh /var/* 2>/dev/null | sort -h | tail -n 10
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.15.2.png)
    3. uptime
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.15.3.png)
    4. systemctl --failed
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.15.4.png)
    5. journalctl -xe | tail -n 50
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.15.5.png)
 ## Praktikum 2.16 — Monitoring Port dan Koneksi (Network Basics)
    1. ip a
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.16.1.png)
    2. ip r
+    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.16.1.png)
    3. sudo ss -tulpn
+    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/praktikum%202.16.1.png)
  ### Latihan 2.5
     Pilih satu port yang listening dari output ss -tulpn(misal port 22), lalu
     tuliskan service/proses yang membukanya. Jelaskan kegunaan port tersebut
     secara singkat.
+    Berdasarkan hasil eksekusi perintah sudo ss -tulpn pada sistem Ubuntu Server Anda, berikut adalah rincian salah satu port yang sedang aktif (listening):
+   1. Port yang dipilih: 53
+   2. Service/Proses yang membukanya: systemd-resolve (dengan PID 5106)
+   3. Kegunaan port secara singkat: Port 53 digunakan untuk layanan DNS (Domain Name System). Fungsi utamanya adalah menerjemahkan nama domain yang mudah dibaca manusia (seperti google.com) menjadi alamat IP yang dimengerti oleh jaringan komputer, sehingga server dapat terhubung ke internet dengan benar.
 
 ## 1.9 Latihan
 
  ### Latihan 2.A
     Jalankan lspci -nnk. Pilih 1 perangkat PCI dan tuliskan: nama perangkat,
     ID vendor:device, dan kernel driver in use.
+   1. Nama perangkat: Ethernet controller: Intel Corporation 82540EM
+   2. ID vendor:device: [8086:100e]
+   3. Kernel driver in use: e1000
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.a.png)
  ### Latihan 2.B
     Tentukan device root filesystem dengan findmnt /. Lalu cocokkan dengan
     lsblk -f dan tuliskan tipe filesystem serta UUID-nya.
+   1. Device Root Filesystem: /dev/mapper/ubuntu--vg-ubuntu--lv
+   2. Tipe Filesystem: ext4
+   3. UUID: 2f7d371a-b86d-4f10-b3c6-2de15338dfa2
+    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.b.1.png)
+    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.b.2.png)
  ### Latihan 2.C
     Buat file server.log berisi minimal 10 baris dengan variasi kata: INFO,
     WARN, ERROR. Gunakan grep untuk menampilkan hanya baris ERROR.
+   1. Perintah Pembuatan File: Menggunakan echo dikombinasikan dengan operator >> untuk memasukkan 10 baris teks dengan variasi status (INFO, WARN, ERROR) ke dalam file bernama server.log.
+   2. Perintah Penyaringan: grep "ERROR" server.log.
+   3. Fungsi Grep: Perintah grep berfungsi untuk mencari pola string tertentu di dalam file dan menampilkan baris yang cocok ke layar.
+    ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.c.png)
  ### Latihan 2.D
     Gunakan sed untuk mengganti semua kata server menjadi node pada file
     latihan. Tunjukkan sebelum dan sesudah.
+    Isi File Sebelum:
+   Ini adalah server utama.
+   Aplikasi berjalan di server lokal.
+   Perintah yang digunakan: sed -i 's/server/node/g' latihan
+   Isi File Sesudah:
+   Ini adalah node utama.
+   Aplikasi berjalan di node lokal.
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.d.png)
  ### Latihan 2.E
     Gunakan df -h lalu awk untuk menampilkan filesystem yang penggunaan disk
     di atas 70%.
+    Perintah: df -h | awk 'NR > 1 && +$5 > 70 {print $0}'
+   Hasil: (Tuliskan baris yang muncul di layar, atau tulis "Tidak ada filesystem di atas 70%" jika kosong).
+   Kesimpulan: Perintah ini sangat berguna bagi sysadmin untuk memantau partisi mana yang sudah hampir penuh secara otomatis.
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.e.png)
  ### Latihan 2.F
     Jalankan sleep 600 &. Temukan PID-nya dengan ps. Hentikan dengan
     SIGTERM. Jelaskan beda SIGTERM vs SIGKILL.
+   1. sigterm lebih sopan
+   2. sigkill secara paksa
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.f.png)
  ### Latihan 2.G
     Gunakan systemctl –failed. Jika tidak ada yang gagal, pilih satu service
     aktif (misal ssh) dan tampilkan status serta 30 baris log terakhirnya.
+   Hasil systemctl --failed: Tidak ada service yang gagal (0 loaded units listed).
+   Service yang dipilih: ssh
+   Status Service: active (running)
+   Perintah Log: systemctl status ssh -n 30
+   Analisis Log: (Tuliskan 1-2 baris terakhir yang Anda lihat, misalnya: "Server listening on 0.0.0.0 port 22").
+   ![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan20%2.g.png)
