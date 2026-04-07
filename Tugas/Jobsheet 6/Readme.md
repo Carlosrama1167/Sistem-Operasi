@@ -95,25 +95,44 @@ Latihan 6.A
 Eksplorasi Proses Sistem
 1. Jalankan ps aux –forest dan temukan proses dengan PID 1. Apa
 nama dan fungsi proses tersebut dalam sistem Linux modern?
+- i sistem Linux modern (seperti Ubuntu Server Anda), PID 1 biasanya adalah systemd. Fungsinya adalah sebagai proses induk pertama yang dilahirkan saat booting dan bertanggung jawab mengelola layanan sistem lainnya.
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206a.1.png)
 2. Hitung berapa proses yang dimiliki oleh user root dan berapa yang
 dimiliki oleh user Anda. Mengapa root memiliki lebih banyak proses?
+- User root memiliki lebih banyak proses karena ia menjalankan layanan sistem (daemon), manajemen perangkat keras, dan tugas latar belakang yang menjaga stabilitas server.
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206a.2.png)
 3. Temukan semua proses yang berada dalam kondisi S. Mengapa sebagian
 besar proses di sistem berada dalam kondisi ini?
+- Sebagian besar proses berada dalam kondisi S karena mereka sedang menunggu event atau input (seperti menunggu permintaan jaringan atau input keyboard) dan tidak memerlukan CPU saat sedang menunggu.
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206a.3.png)
 
 Latihan 6.B
 Simulasi Manajemen Job
 1. Jalankan tiga perintah sleep dengan durasi 100, 200, dan 300 detik di
 background. Verifikasi ketiganya dengan jobs.
+- Tanda & menjalankan perintah di background sehingga terminal tetap bisa digunakan. Perintah jobs akan menampilkan daftar ketiga proses tersebut dengan nomor job [1], [2], dan [3]
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206b.1.png)
 2. Bawa job kedua ke foreground, jeda dengan Ctrl+Z , lalu kembalikan
 ke background dengan bg.
+- Gunakan perintah jobs untuk memastikan statusnya kembali menjadi running di background. 
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206b.2.png)
 3. Hentikan job pertama dengan kill %1. Tampilkan kembali daftar job.
 Berapa job yang tersisa?
+- Job [1] (sleep 100) akan dihentikan. Daftar jobs sekarang hanya akan menyisakan 2 job (job [2] dan [3]).
+![Ubuntu Server 24.04.3 LTS installation ISO file displayed with a disc icon on dark background](img/latihan%206b.3.png)
 
 Latihan 6.C
 Prioritas dan Sinyal
 1. Jalankan dua proses sleep: satu dengan nice +5 dan satu dengan nice
 +15. Verifikasi nilai NI keduanya dengan ps.
+- Nilai nice menentukan prioritas; semakin rendah nilainya (mendekati -20), semakin tinggi prioritasnya. Kolom NI pada ps akan menunjukkan angka 5 dan 15.
+
 2. Gunakan renice untuk mengubah nice proses pertama menjadi +10.
 Proses mana yang kini lebih diprioritaskan scheduler?
 3. Kirim SIGSTOP ke salah satu proses, verifikasi kondisi T-nya, lalu kirim
 SIGCONT. Akhiri semua proses percobaan dengan pkill sleep.
+Langkah-langkah:
+- SIGSTOP: kill -SIGSTOP <PID> (atau nomor job, misal kill -19 %1). Kondisi pada kolom STAT akan berubah menjadi T (Stopped).
+- SIGCONT: kill -SIGCONT <PID> (atau kill -18 %1). Kondisi STAT akan kembali ke S (Sleeping).
+- Pembersihan: Ketik pkill sleep untuk menghentikan semua proses percobaan sekaligus berdasarkan namanya.
+- Tips Keamanan: Ingatlah bahwa user biasa hanya bisa menaikkan nilai nice (menurunkan prioritas). Hanya root yang bisa memberikan nilai negatif untuk memberikan prioritas tertinggi.
